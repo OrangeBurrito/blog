@@ -20,7 +20,7 @@ module.exports.createPages = async ({graphql, actions}) => {
 	const blogPostTemplate = path.resolve('./src/templates/blogpost.js')
 	const res = await graphql(`
 		query {
-			allMarkdownRemark {
+			allMdx {
 				edges {
 					node {
 						fields {

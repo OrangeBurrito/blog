@@ -1,7 +1,10 @@
 import React from 'react'
 import {Link, graphql} from 'gatsby'
+import {Helmet} from 'react-helmet'
+
 import Layout from '../components/layout'
 import PostsBar from '../components/postsbar'
+
 import '../styles/blog.css'
 
 export const query = graphql`
@@ -19,6 +22,9 @@ export const query = graphql`
 const Blog = (props) => {
 	return (
 		<Layout title="Blog" headerStyle={{fontFamily: 'Special Elite', paddingTop: '10px'}}>
+			<Helmet>
+			<title>{props.data.markdownRemark.frontmatter.title}</title>
+			</Helmet>
 			<section class="post-wrap">
 
 				<div class="post-header">
@@ -28,6 +34,7 @@ const Blog = (props) => {
 					</div>
 
 					<Link className="back-button" to="/blog">Back To Posts</Link>
+					<Link className="back-button-short" to="/blog">Back</Link>
 				</div>
 
 				<div class="post-content content box" dangerouslySetInnerHTML={{__html: props.data.markdownRemark.html}}></div>

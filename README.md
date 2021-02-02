@@ -8,6 +8,6 @@
 </h1>
 
 This is my blog site repo. (still a work-in-progress)
-I write about whatever comes to mind
+I write about whatever comes to mind.
 
-[_Visit my blog here!_](orangeburrito.com/blog)
+[_Visit my blog here!_](https://orangeburrito.com/blog)

@@ -2,7 +2,6 @@ section {
 	height: 100%;
 	display: grid;
 	grid-gap: 0.5rem;
-	grid-template-columns: 2.5fr 1.5fr;
 }
 
 section > .post-header {
@@ -44,14 +43,17 @@ section > .post-header {
 	overflow-y: scroll;
 }
 
-.post-content p {
+.post-content p, li {
 	max-width: 75ch;
-	line-height: 1.5;
-	margin-bottom: 1.5rem;
 	font-size: 1.5rem;
 }
 
-img {
+.post-content p {
+	line-height: 1.5;
+	margin-bottom: 1.5rem;
+}
+
+.post-content img {
 	padding: 1.5rem;
 }
 
@@ -63,8 +65,8 @@ img {
 	grid-row: span 2;
 }
 
-.back-button {
-	display: flex;
+.back-button, .back-button-short {
+	display: none;
 	align-items: center;
 	justify-content: center;
 	text-decoration: none;
@@ -72,20 +74,28 @@ img {
 	color: #4A8DDE;
 	align-items: center;
 	border-radius: 5px;
-	font-size: 1.5rem;
+	font-size: 1.8rem;
 	transition: 250ms ease-in-out;
 }
 
-.back-button:hover {
-	background: #1D4082;
+.back-button:hover, .back-button-short:hover {
+	background: #2E3960;
 	color: #68A6ED;
-	font-size: 1.8rem;
+	font-size: 2rem;
+}
+
+.back-button-short {
+	display: flex;
 }
 
 .latest-posts a {
 	font-size: 1.5rem;
 	color: #BABABA;
 	text-decoration: none;
+}
+
+.latest-posts {
+	display: none;
 }
 
 a {
@@ -98,6 +108,7 @@ a:hover {
 }
 
 .posts-bar-wrap {
+	display: none;
 	font-size: 1.5rem;
 	padding: 1rem;
 	grid-row: span 2;
@@ -114,7 +125,7 @@ a:hover {
 }
 
 .posts-bar-item > * {
-	transition: 100ms ease-in-out;
+	transition: 80ms ease-in-out;
 }
 
 .posts-bar-item:hover {
@@ -123,3 +134,79 @@ a:hover {
 	background: #43494D;
 	box-shadow: -9px 9px #292B2E;
 }
+
+@media (min-width: 900px) {
+	section {
+		grid-template-columns: 2.5fr 1.5fr;
+	}
+
+	.latest-posts {
+		display: grid;
+	}
+
+	.posts-bar-wrap {
+		display: block;
+	}
+}
+
+@media (min-width: 1600px) {
+	.back-button {
+		display: flex;
+	}
+
+	.back-button-short {
+		display: none;
+	}
+}
+
+.post-content {
+	font-size: 15px;
+	word-wrap: break-word;
+	line-height: 1.7;
+	-webkit-font-smoothing: antialiased;
+	}
+
+	.post-content p, .post-content blockquote, .post-content ul, .post-content ol, .post-content dl, .post-content table, .post-content pre {
+		margin: 15px 0;
+	}
+
+	.post-content ul, ol {
+		padding-left: 30px;
+	}
+
+	.post-content h1 {
+	border-bottom: 1px solid #ddd;
+	font-size: 2.5em;
+	}
+
+	.post-content h2 {
+	border-bottom: 1px solid #eee;
+	font-size: 2.0em;
+	}
+
+	.post-content h3 {
+	font-size: 1.5em;
+	}
+
+	.post-content h4 {
+	font-size: 1.2em;
+	}
+
+	.post-content h5 {
+	font-size: 1.0em;
+	}
+
+	.post-content h6 {
+	font-size: 1.0em;
+	}
+
+  .post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6 {
+	font-weight: bold;
+	line-height: 1.7;
+	margin: 1em 0 15px 0;
+	}
+
+  h1 + p, h2 + p, h3 + p {
+	margin-top: 10px;
+	}
+	
